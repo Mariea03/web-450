@@ -23,10 +23,19 @@ import { CookieService } from 'ngx-cookie-service';
           <label for="username" class="signin__label">Username</label>
           <input id="username" formControlName="username" type="text" class="signin__input" />
         </div>
+
+         <!--
+        Week 2 Minor Task:
+        Added a red astrerisk to the password label to indicate
+        that the field is required for better UX clarity.
+      -->
         <div class="signin__form-group">
-          <label for="password" class="signin__label">Password</label>
+          <label for="password" class="signin__label">
+          Password <span class="required">*</span> <!-- Required field indicator added -->
+          </label>
           <input id="password" formControlName="password" type="password" class="signin__input" />
         </div>
+
         <input type="submit" class="signin__button" Value="Submit" />
       </form>
       <a href="/" class="signin__return-link">Return to Home</a>
@@ -45,7 +54,7 @@ import { CookieService } from 'ngx-cookie-service';
     }
 
     .signin__title {
-      text-align: center;
+        text-align: center;
     }
 
     .signin__form {
@@ -59,6 +68,11 @@ import { CookieService } from 'ngx-cookie-service';
 
     .signin__label {
       margin-bottom: 5px;
+    }
+
+    /* .required: makes the asterisk red to indicate required form fields */
+    .required {
+      color: red;
     }
 
     .signin__input {
