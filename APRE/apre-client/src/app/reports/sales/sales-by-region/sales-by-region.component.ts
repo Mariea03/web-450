@@ -22,10 +22,8 @@ import { ChartComponent } from '../../../shared/chart/chart.component';
         </div>
 
 
-      <!--
-      Added a tooltip to the Submit button to improve usability and clarify
-      the button's action for the user.
-      -->
+      <!--Added a tooltip to the Submit button to improve usability and clarify
+      the button's action for the user.  -->
         <div class="form__actions">
           <button class="button button--primary" type="submit" title="Click to fetch data">Submit</button>
         </div>
