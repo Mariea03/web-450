@@ -10,13 +10,37 @@ const express = require('express');
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
 const { notFoundHandler, errorHandler } = require('./error-handler');
 
 // Importing the index router
 const indexRouter = require('./routes/index');
+const gardenRouter = require('./models/garden');
+const plantRouter = require('./models/plant');
 
 // Variable declaration for the express app
 let app = express();
+
+// Mongoose connection
+const connectionString =
+'mongodb+srv://gms_user:s3cret@bellevueuniversity.r1etkka.mongodb.net/?appName=BellevueUniversity';
+
+const dbName = 'gms'; // Database name
+
+// Function to connect to the database
+async function connectToDatabase() {
+  try{
+    await mongoose.connect(connectionString, {
+      dbName: dbName,
+    });
+
+    console.log(`Connection to the '${dbName}'database was successful`);
+  } catch (err) {
+    console.error(`MongoDB connection error: ${err}`);
+  }
+}
+
+connectToDatabase(); // Call the function to connect to the database.
 
 // CORS configuration
 app.use((req, res, next) => {
@@ -34,6 +58,8 @@ app.use(cookieParser());
 
 // Routing configuration
 app.use('/api', indexRouter);
+app.use('/api/gardens', gardenRouter);
+app.use('/api/plants', plantRouter)
 
 // Use the error handling middleware
 app.use(notFoundHandler);
@@ -41,3 +67,7 @@ app.use(errorHandler);
 
 // Export the app
 module.exports = app;
+
+
+// In this code example we added out MongoDB connection string to the app.js file and
+// established a connection to our MongoDB database cluster.
