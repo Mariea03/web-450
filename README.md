@@ -43,3 +43,18 @@ Notes:
 *Uses mock data for Sales by salesperson
 *Session management via ngx-cookie-service
 *Includes unit tests for all major components and server endpoints
+
+
+AGENT PERFOMANCE BY TEAM
+Overview
+This module displays Agent Performance by Team in a table format. It fetches data from the backend API and renders agent, team, ticket resolved, and score.
+The module consist of: 
+Component: AgentPerformanceComponent
+Service: AgentPerformanceService
+API endpoint: /api/reports/agent-performance/team
+
+File Structure
+agent-performance/
+-agent-performance.component
+-agent-performance.service.ts
+-agent-performance.component.ts
