@@ -14,7 +14,11 @@ import { ChartComponent } from '../../../shared/chart/chart.component';
       <form class="form" [formGroup]="regionForm" (ngSubmit)="onSubmit()">
         <div class="form__group">
           <label class="label" for="region">Region</label>
+
           <select class="select" formControlName="region" id="region" name="region">
+            <!-- Placeholder option added to prompt the user to select a region -->
+            <option value=""disabled>Select Region</option>
+
             @for(region of regions; track region) {
               <option value="{{ region }}">{{ region }}</option>
             }
@@ -59,7 +63,7 @@ export class SalesByRegionComponent implements AfterViewInit {
   regions: string[] = [];
 
   regionForm = this.fb.group({
-    region: [null, Validators.compose([Validators.required])]
+    region: ['',Validators.required]
   });
 
   constructor(
