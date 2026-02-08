@@ -11,9 +11,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-agent-performance',
   standalone: true,
   imports: [RouterOutlet],
-  template: `
-    <router-outlet />
-  `,
+  template: `<router-outlet />`,
   styles: ``
 })
 export class AgentPerformanceComponent {
