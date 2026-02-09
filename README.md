@@ -58,3 +58,23 @@ agent-performance/
 -agent-performance.component
 -agent-performance.service.ts
 -agent-performance.component.ts
+
+Customer Feedback by Agent
+Features:
+API endpoint to fetch all agents: GET /api/customer-feedback/agents
+API endpoint to fetch feedback for a selected agent: GET /api/customer-feedback/by-agent?agent=<agentName>
+Angular component with:
+  Dropdown to select agent
+  Table view of agent feedback with columns:Agent Name, Total Feedbacks, Average Rating
+Reactive form validation for agent selection
+Table dynamically updates based on the selected agent
+Unit tests (3each) for component and service
+
+File Structure
+customer-feedback/
+-by-agent.component.ts
+-by-agent.component.spec.ts
+-customer-feedback.component.ts
+-customer-feedback.component.spec.ts
+-customer-feedback.service.ts
+-customer-feedback.service.spec.ts
