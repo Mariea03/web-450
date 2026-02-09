@@ -16,6 +16,4 @@ import { RouterOutlet } from '@angular/router';
   `,
   styles: ``
 })
-export class CustomerFeedbackComponent {
-
-}
+export class CustomerFeedbackComponent {}
